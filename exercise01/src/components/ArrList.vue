@@ -26,14 +26,11 @@ export default {
         }
     },
     created() {
-        let flag = 100
-        let x = 0
-        for(let i=1; i<=flag; i++){
-            this.items.push({num: i, className: this.className[x]})
-            if(i%10 == 0){
-                x++
-            }
-        }
+        let flag = 0
+        this.items = Array.from({length:100}, (v, i) => {
+            if(i%10 == 0 && i!=0) flag++
+            return ({num: ++i, className: this.className[flag]})
+        })
     }
 }
 </script>
