@@ -1,4 +1,4 @@
-# exercise01
+# exercise
 
 ## Project setup
 ```
