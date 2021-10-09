@@ -16,8 +16,7 @@ export default {
     getLabel(obj) {
       if(!obj.objChildren) return this.arr.push(obj.label)
       this.arr.push(obj.label)
-      let tempObj = obj.objChildren
-      return this.getLabel(tempObj)
+      return this.getLabel(obj.objChildren)
     }
   },
   mounted(){
