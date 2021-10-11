@@ -2,22 +2,22 @@
   <div>
     <p>
       要处理的数组:
-      <pre style="font-size:20px">
-        let objArr = [{
-          label: "一级",
+      <pre>
+  let objArr = [{
+    label: "一级",
+    objChildren: [{
+      label: "二级",
+      objChildren: [{
+        label: "三级",
+        objChildren: [{
+          label: "四级",
           objChildren: [{
-            label: "二级",
-            objChildren: [{
-              label: "三级",
-              objChildren: [{
-                label: "四级",
-                objChildren: [{
-                  label: "五级",
-                }],
-              }],
-            }],
+            label: "五级",
           }],
-        }]
+        }],
+      }],
+    }],
+  }]
       </pre>
     </p>
     <p>数组展开后:<br />{{ arrFlatedObj }}</p>
