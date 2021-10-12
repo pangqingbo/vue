@@ -58,5 +58,6 @@ export default {
     }
     #ocard #ocard-content{
         padding: 10px;
+        min-height: 40px;
     }
 </style>
