@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../components/Home.vue'
 import ArrList from '../components/ArrList.vue'
 import GetLabel from '../components/GetLabel.vue'
+import CardUse from '../components/CardUse.vue'
 
 const routes = [
     {
@@ -15,6 +16,10 @@ const routes = [
             {
                 path: 'getlabel',
                 component: GetLabel
+            },
+            {
+                path: 'card',
+                component: CardUse
             }
         ]
     }
