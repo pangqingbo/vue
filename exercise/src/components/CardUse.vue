@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="width: 400px;margin:0 auto">
         <div style="margin-top: 10px; padding:30px;">
             <!-- bordered如果设置为false则不会显示边框 -->
             <!-- title用来设置标题 -->

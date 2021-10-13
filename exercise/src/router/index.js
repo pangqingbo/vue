@@ -3,6 +3,7 @@ import Home from '../components/Home.vue'
 import ArrList from '../components/ArrList.vue'
 import GetLabel from '../components/GetLabel.vue'
 import CardUse from '../components/CardUse.vue'
+import OinputUse from '../components/OinputUse.vue'
 
 const routes = [
     {
@@ -20,6 +21,10 @@ const routes = [
             {
                 path: 'card',
                 component: CardUse
+            },
+            {
+                path: 'oinput',
+                component: OinputUse
             }
         ]
     }

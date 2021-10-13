@@ -10,6 +10,7 @@
         <p><router-link to="/arrlist">01.exercise:循环输出100个对象数组</router-link></p>
         <p><router-link to="/getlabel">02.exercise:递归获取label，同时展开数组</router-link></p>
         <p><router-link to="/card">03.写一个card组件</router-link></p>
+        <p><router-link to="/oinput">04.写一个input组件</router-link></p>
         <router-view></router-view>
     </div>
 </template>
