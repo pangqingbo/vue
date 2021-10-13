@@ -4,6 +4,7 @@ import ArrList from '../components/ArrList.vue'
 import GetLabel from '../components/GetLabel.vue'
 import CardUse from '../components/CardUse.vue'
 import OinputUse from '../components/OinputUse.vue'
+import RandomColor from '../components/RandomColor.vue'
 
 const routes = [
     {
@@ -25,6 +26,10 @@ const routes = [
             {
                 path: 'oinput',
                 component: OinputUse
+            },
+            {
+                path: 'randomcolor',
+                component: RandomColor
             }
         ]
     }
