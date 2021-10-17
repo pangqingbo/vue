@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import { onMounted, ref } from '@vue/runtime-core'
+import { ref } from '@vue/runtime-core'
 
 export default {
     setup(){
-        const str = '0123456789ABCDEF'
         let color = ref('')
         function randomColor(){
+            const str = '0123456789ABCDEF'
             let i = 0
             color.value = '#'
             while(i<6){
@@ -20,7 +20,6 @@ export default {
                 i++
             }
         }
-        onMounted(randomColor)
         return{
             color,
             randomColor

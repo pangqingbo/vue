@@ -12,6 +12,7 @@
         <p><router-link to="/card">03.写一个card组件</router-link></p>
         <p><router-link to="/oinput">04.写一个input组件</router-link></p>
         <p><router-link to="/randomcolor">05.写一个函数随机生成16进制的颜色值</router-link></p>
+        <p><router-link to="/diffcolorball">06.写一个组件生成随机颜色的球</router-link></p>
         <router-view></router-view>
     </div>
 </template>

@@ -20,7 +20,7 @@
   }]
       </pre>
     </p>
-    <p>数组展开后:<br />{{ arrFlatedObj }}</p>
+    <p>数组展开后:<br />{{ arrPeers }}</p>
     <p>获取到的label组成的数组:<br />{{ arr }}</p>
   </div>
 </template>
@@ -30,14 +30,16 @@ export default {
   data() {
     return {
       arr: [],
-      arrFlatedObj: {},
+      arrPeers: [],
     };
   },
   methods: {
     getLabel(obj) {
       if (!obj.objChildren) {
+        this.arrPeers.push({label:obj.label})
         return this.arr.push(obj.label);
       }
+      this.arrPeers.push({label:obj.label})
       obj.objChildren = { ...obj.objChildren }[0];
       this.arr.push(obj.label);
       return this.getLabel(obj.objChildren);
@@ -69,8 +71,8 @@ export default {
         ],
       },
     ];
-    this.arrFlatedObj = { ...objArr }[0];
-    this.getLabel(this.arrFlatedObj);
+    objArr = {...objArr}[0]
+    this.getLabel(objArr);
   },
 };
 </script>
