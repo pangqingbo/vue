@@ -7,19 +7,21 @@
         :style="item.styleObj"
         :key="item.id"
       >
-        {{ item.msg }}
+        {{ item.content }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from "@vue/reactivity";
+import { ref, toRefs } from "@vue/reactivity";
 import { onMounted } from '@vue/runtime-core';
 
 export default {
-  setup() {
+  props: ['msg'],
+  setup(props) {
     // 生成随机颜色
+    let { msg } = toRefs(props)
     function randomColor() {
       let color = ref("");
       const str = "0123456789ABCDEF";
@@ -35,29 +37,13 @@ export default {
     let items = ref([]);
     function setItems() {
       // 每个div里的文字
-      let msg = [
-        "违法建设",
-        "医疗服务",
-        "消费纠纷",
-        "政法服务",
-        "公积金",
-        "物业停水",
-        "职工保险",
-        "疫苗",
-        "财产安全",
-        "民生工程",
-        "物业停水",
-        "职工保险",
-        "疫苗",
-        "财产安全",
-        "民生工程",
-      ];
+      let content = [...msg.value];
       // 获取最大宽度，方便设置div不超出盒子
       let maxWidth = ref(0);
       maxWidth.value = document.body.clientWidth;
       // 创建一个长度为10的items数组，div的个数由items长度决定
       // 同时设置每个div的位置、大小、颜色
-      items.value = Array.from({ length: 15 }, (v, i) => {
+      items.value = Array.from({ length: content.length }, (v, i) => {
         // 设置每个div大小
         let size = parseInt(Math.random() * 50 + 150);
         // 设置每个div位置
@@ -77,7 +63,7 @@ export default {
         };
         return {
           // 每个div里的文字由msg数组决定
-          msg: msg[i],
+          content: content[i],
           id: ++i,
           styleObj,
         };

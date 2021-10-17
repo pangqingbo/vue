@@ -5,7 +5,7 @@ import GetLabel from '../components/GetLabel.vue'
 import CardUse from '../components/CardUse.vue'
 import OinputUse from '../components/OinputUse.vue'
 import RandomColor from '../components/RandomColor.vue'
-import DiffColorBall from '../components/DiffColorBall.vue'
+import ColorBall from '../view/ColorBall.vue'
 
 const routes = [
     {
@@ -35,8 +35,8 @@ const routes = [
         ]
     },
     {
-        path: '/diffcolorball',
-        component: DiffColorBall
+        path: '/colorball',
+        component: ColorBall
     }
 ]
 
