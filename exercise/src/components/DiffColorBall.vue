@@ -15,6 +15,7 @@
 
 <script>
 import { ref } from "@vue/reactivity";
+import { onMounted } from '@vue/runtime-core';
 
 export default {
   setup() {
@@ -31,8 +32,8 @@ export default {
       return color.value;
     }
 
+    let items = ref([]);
     function setItems() {
-      let items = ref([]);
       // 每个div里的文字
       let msg = [
         "违法建设",
@@ -56,7 +57,7 @@ export default {
       maxWidth.value = document.body.clientWidth;
       // 创建一个长度为10的items数组，div的个数由items长度决定
       // 同时设置每个div的位置、大小、颜色
-      items = Array.from({ length: 15 }, (v, i) => {
+      items.value = Array.from({ length: 15 }, (v, i) => {
         // 设置每个div大小
         let size = parseInt(Math.random() * 50 + 150);
         // 设置每个div位置
@@ -81,12 +82,15 @@ export default {
           styleObj,
         };
       });
-      return items;
+      // return items;
     }
-
-    // 调用setItems输出结果
-    let items = ref(setItems());
-    return { items };
+    onMounted(setItems)
+    // 设置在浏览器窗口大小发生变化时调用setItems重新渲染
+    window.onresize = setItems
+    return { 
+      items,
+      setItems
+    };
   },
 };
 </script>
